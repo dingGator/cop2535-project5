@@ -25,7 +25,7 @@ public:
 
 	UserInput();  // constructor
 
-	int userEnterIn(string, int);
+	int userEnterInput(string);
 	void processChoice();
 	~UserInput(){};
 };

@@ -2,11 +2,11 @@
 // This program adds a list insert by position capability to the
 // Linked List Class.
 #include <iostream>
-#include "DisplayRep.h"
+//#include "DisplayRep.h"
 #include "UserInput.h"
-#include "ValidateInput.h"
-#include "LinkNode.h"
-#include "LinkedList.h"
+//#include "ValidateInput.h"
+//#include "LinkNode.h"
+//#include "LinkedList.h"
 
 using namespace std;
 /**********************************************
@@ -24,26 +24,29 @@ int main()
 
 {
 	// Explain program to user
-	cout << "\n\n   This program allows you to construct a list by:" << endl;
-	cout << "   add inventory item at the end of the list" << endl;
-	cout << "   add inventory item at the beginning of the list" << endl;
-	cout << "   remove inventory item from the end of the list" << endl;
-	cout << "   remove inventory item from the beginning of the list" << endl;
-	cout << "   remove inventory item by name  " << endl;
-	cout <<	"   display the list of inventory items" << endl;
+	cout << "\n\n   This program allows you to construct a list  " << endl;
+	cout << "\n       You can:   " << endl;
+	cout << "\n          1.    add inventory item at the end of the list. " << endl;
+	cout << "\n          2.    add inventory item at the beginning of the list." << endl;
+	cout << "\n          3.    remove inventory item from the end of the list." << endl;
+	cout << "\n          4.    remove inventory item from the beginning of the list." << endl;
+	cout << "\n          5.    remove inventory item by name.  " << endl;
+
+	cout << "\n\n       Then program will display the list of inventory items" << endl;
 
 
-	UserInput userEnterInput;
-	ValidateNum valNum;
-	LinkedList list1;
+	UserInput userEnter;
+	//ValidateNum valNum;
+	//LinkedList list1;
 
-	DisplayRep  disRep;
+	//DisplayRep  disRep;
 	//double aveNum;
 	//int modNum;
 	//int movieNum;
 	string begin_Input = "begin_Input";
 	string good_Num = "good_Num";
 	string statusMsg;
+	int choiceNum;
 	statusMsg = begin_Input;
 
 
@@ -53,20 +56,20 @@ int main()
 				//			Allow the user to enter the number
 				//of movies each student saw into the array.
 				*******************************************/
-	
-				choiceNum=userEnterInput.userEnterIn(statusMsg);
+	cout << "\n\n    before userEnterInput" << endl;
+				choiceNum=userEnter.userEnterInput(statusMsg);
 				/********************************************
 				//	 Validate all input.
 				*******************************************/
 	
-				statusMsg = valNum.valInput(movieNum);
-				if (statusMsg == good_Num)
-				{
-
+	//			statusMsg = valNum.valInput(choiceNum);
+	//			if (statusMsg == good_Num)
+	//			{
+	cout << "\n\n    after valInput" << endl;
 					/********************************************
 					//	 Load number of movie into array.
 					*******************************************/
-
+	//			}
 					//			ldArray.loadInArray(n, movieNum, statusMsg);
 		/*			n++;
 				}

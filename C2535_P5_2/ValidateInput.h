@@ -23,7 +23,7 @@ private:
 public:
 	string errorMsgOut;
 	ValidateNum();  // constructor
-	string valInput(int &);
+	string valInput(int);
 	~ValidateNum(){};
 };
 #endif

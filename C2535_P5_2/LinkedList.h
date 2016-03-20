@@ -8,6 +8,22 @@
 
 #include "LinkNode.h"
 using namespace std;
+class ListNode
+{
+public:
+	ListNode(double v, ListNode *p)
+	{
+		value = v; next = p;
+	}
+private:
+	int pos;
+	double value;
+	ListNode *next;
+	friend class LinkedList;      // LinkedList has friend status	
+};
+
+
+
 class LinkedList
 {
 public:
@@ -20,10 +36,12 @@ public:
 	void remove(double x);
 	void reverse();
 	int search(double x);
-	void insert(double x);
+
+	void insert(string, int, int);
 private:
 	ListNode *head;
 	static void rPrint(ListNode *pList);
+	int pos;
 };
 
 #endif

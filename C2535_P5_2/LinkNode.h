@@ -8,18 +8,4 @@
 
 //#include "ListNode.h"
 using namespace std;
-class ListNode
-{
-public:
-	ListNode(double v, ListNode *p)
-	{
-		value = v; next = p;
-	}
-private:
-	double value;
-	ListNode *next;
-	friend class LinkedList;      // LinkedList has friend status	
-};
-
-
 #endif

@@ -10,18 +10,19 @@ using namespace std;
 //              LinkedList::insert                         *
 //  Insert a given value at a specified position.          *
 //**********************************************************
-void LinkedList::insert(double x)
+void LinkedList::insert(string statusMsg, int x, int choiceNumber)
 {
 	// Cases where the new value goes at the beginning
 	// or when the list is empty are handled separately
-	if (begin)
+	if (choiceNumber == 1)
 	{
 		pos = 0;
-	}
-	else (end)
+	}	
+	else if (choiceNumber == 2)
 	{
 		pos = NULL;
 	}
+
 	if (pos == 0 || head == NULL)
 	{
 		head = new ListNode(x, head);
