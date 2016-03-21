@@ -11,19 +11,18 @@ class ValidateNum
 
 ***************************************/
 
-class ValidateNum
+class ValidateInput
 {
 private:
 	// variables 
-
-
 	int valInNum;
 
 	int sentinel_99;
 public:
 	string errorMsgOut;
-	ValidateNum();  // constructor
-	string valInput(int);
-	~ValidateNum(){};
+	ValidateInput();  // constructor
+	string valChoice(int);
+	string valItem(string);
+	~ValidateInput(){};
 };
 #endif

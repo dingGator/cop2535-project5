@@ -4,6 +4,8 @@
 #define USERINPUT_H
 
 #include <iostream>
+#include <cctype>
+#include <string>
 #include <cstdlib>
 using namespace std;
 /*************************************
@@ -19,13 +21,15 @@ private:
 	string itemName;
 	string begin_Input;
 	int arrEleDisplay;
+	int errorCnt;
 
 
 public:
 
 	UserInput();  // constructor
 
-	int userEnterInput(string);
+	int userEnterChoice(string);
+	string userEnterItem(string);
 	void processChoice();
 	~UserInput(){};
 };

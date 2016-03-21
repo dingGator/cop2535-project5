@@ -2,9 +2,9 @@
 // This program adds a list insert by position capability to the
 // Linked List Class.
 #include <iostream>
-//#include "DisplayRep.h"
+#include "DisplayRep.h"
 #include "UserInput.h"
-//#include "ValidateInput.h"
+#include "ValidateInput.h"
 //#include "LinkNode.h"
 //#include "LinkedList.h"
 
@@ -36,40 +36,41 @@ int main()
 
 
 	UserInput userEnter;
-	//ValidateNum valNum;
+	ValidateInput valInput;
 	//LinkedList list1;
 
-	//DisplayRep  disRep;
-	//double aveNum;
-	//int modNum;
-	//int movieNum;
+	DisplayRep  displayList;
 	string begin_Input = "begin_Input";
 	string good_Num = "good_Num";
 	string statusMsg;
 	int choiceNum;
+	string itemName;
+	string goodItem;
 	statusMsg = begin_Input;
 
 
-	/**************************************************************
-	*/
+	
 				/********************************************
 				//			Allow the user to enter the number
 				//of movies each student saw into the array.
 				*******************************************/
 	cout << "\n\n    before userEnterInput" << endl;
-				choiceNum=userEnter.userEnterInput(statusMsg);
+				choiceNum=userEnter.userEnterChoice(statusMsg);
 				/********************************************
 				//	 Validate all input.
 				*******************************************/
-	
-	//			statusMsg = valNum.valInput(choiceNum);
-	//			if (statusMsg == good_Num)
-	//			{
+	cout << "\n\n    before valInput" << endl;
+			statusMsg = valInput.valChoice(choiceNum);
+				if (statusMsg == good_Num)
+				{
 	cout << "\n\n    after valInput" << endl;
+	itemName = userEnter.userEnterItem(statusMsg);
+	goodItem = valInput.valItem(itemName);
 					/********************************************
-					//	 Load number of movie into array.
-					*******************************************/
-	//			}
+					process user choice
+					//	***************************************/
+
+			}
 					//			ldArray.loadInArray(n, movieNum, statusMsg);
 		/*			n++;
 				}
@@ -89,10 +90,10 @@ int main()
 	display the average with one decimal place
 	display the mode(the value that occurs most often).
 	***********************************************/
-	/*
-	disRep.displayHeader();
-	//	disRep.displaySurAvg(aveNum);
+	
+	displayList.displayHeader();
+	//displayList.displayItemList(sizeArray,itemArray[]);
 	//	disRep.displaySurMod(modNum);
-	*/
+	
 	return 0;
 }

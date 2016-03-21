@@ -17,7 +17,8 @@ void DisplayRep::displayHeader()
 {	//display
 
 	cout << "\n\n     ***************************************************" << endl;
-	cout << "\n          Report Of Numbers of Movies Student watch          " << endl;
+	cout << "\n                    The List of Items you entered "         ;
+	cout << "\n              Please note:  ** the items should be in the order you wanted   ";
 	cout << "\n     ****************************************************" << endl;
 
 }
@@ -25,24 +26,19 @@ void DisplayRep::displayHeader()
 display average number of movies watched
 ************************************/
 
-void DisplayRep::displaySurAvg(double avgNum)
+void DisplayRep::displayItemList(int sizeofArray,string arrayItem[])
 {
 	//display
-	cout << fixed << showpoint << setprecision(1);
-	cout << "\n        Student watched an average of :  ";
-	cout << avgNum << "  movies.  " << endl;
+	
+	for (int i = 0; i < sizeofArray; i++)
+	{
+		cout << "\n        item # " << (i + 1) << "  is:  " << endl;
+	}
+	
 }
 /****************************************
 display mode of the survey
 **************************************/
-
-void DisplayRep::displaySurMod(int modeNum)
-{
-	cout << "\n        The mode is:   ";
-	cout << modeNum << "  movies.  " << endl;
-	cout << "\n                      *****                  " << endl;
-	cout << endl << endl;
-}
 
 
 

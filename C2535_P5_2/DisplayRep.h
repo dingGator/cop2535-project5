@@ -25,12 +25,11 @@ public:
 	/*************************************
 	display average number of movies watched
 	************************************/
-	void displaySurAvg(double);
+	void displayItemList(int,string[]);
 
 	/****************************************
 	display mode of the survey
 	**************************************/
-	void displaySurMod(int);
 
 	~DisplayRep(){};
 };

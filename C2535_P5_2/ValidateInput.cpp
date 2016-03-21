@@ -6,7 +6,7 @@
 
 using namespace std;
 
-ValidateNum::ValidateNum()
+ValidateInput::ValidateInput()
 {
 	valInNum = -98;
 	sentinel_99 = -99;
@@ -21,7 +21,7 @@ and error msg back to the program
 *--- if 0 or less than  0               --- error range number
 **********************************/
 
-string ValidateNum::valInput(int inNum)
+string ValidateInput::valChoice(int inNum)
 {
 
 
@@ -47,3 +47,22 @@ string ValidateNum::valInput(int inNum)
 
 
 }
+string ValidateInput::valItem(string itemName)
+{
+	if (itemName == "-99")  //sentinel
+	{
+		cout << "\n\n  You wanted to stop entering numbers.  Good bye    " << endl;
+
+		exit(0);
+	}
+	else 
+	{
+		cout << "\n\n You entered:  " << itemName << "." << endl;
+		errorMsgOut = "good_Item";
+
+	}
+	return errorMsgOut;
+
+}
+
+
