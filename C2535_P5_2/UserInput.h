@@ -29,7 +29,7 @@ public:
 	UserInput();  // constructor
 
 	int userEnterChoice(string);
-	string userEnterItem(string);
+	string userEnterItem();
 	void processChoice();
 	~UserInput(){};
 };

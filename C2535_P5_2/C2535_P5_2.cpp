@@ -2,6 +2,7 @@
 // This program adds a list insert by position capability to the
 // Linked List Class.
 #include <iostream>
+#include <string>
 #include "DisplayRep.h"
 #include "UserInput.h"
 #include "ValidateInput.h"
@@ -59,16 +60,19 @@ int main()
 				/********************************************
 				//	 Validate all input.
 				*******************************************/
-	cout << "\n\n    before valInput" << endl;
+	cout << "\n\n    before valInput  " << choiceNum<<endl;
 			statusMsg = valInput.valChoice(choiceNum);
 				if (statusMsg == good_Num)
 				{
-	cout << "\n\n    after valInput" << endl;
-	itemName = userEnter.userEnterItem(statusMsg);
+	cout << "\n\n    after valInput  " << endl;
+	itemName = userEnter.userEnterItem();
+	cout << "\n\n    after  enteritem  " << itemName<< endl;
+
 	goodItem = valInput.valItem(itemName);
 					/********************************************
 					process user choice
 					//	***************************************/
+	cout << "\n\n    after valItem  " << goodItem << endl;
 
 			}
 					//			ldArray.loadInArray(n, movieNum, statusMsg);

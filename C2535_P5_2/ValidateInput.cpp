@@ -10,6 +10,8 @@ ValidateInput::ValidateInput()
 {
 	valInNum = -98;
 	sentinel_99 = -99;
+	errorMsgOut = " ";
+	wrong_Choice = "wrong_Number";
 }
 /***************************
 ValidateNum::errorMsg
@@ -24,18 +26,13 @@ and error msg back to the program
 string ValidateInput::valChoice(int inNum)
 {
 
+	cout << "\n\n  inNum  " << inNum << endl;
 
-	if (inNum == sentinel_99)  //sentinel
+	if ((inNum == sentinel_99)|| (inNum ==6))  //sentinel
 	{
 		cout << "\n\n  You wanted to stop entering numbers.  Good bye    " << endl;
 
 		exit(0);
-	}
-	else if (inNum <= 0)
-	{
-		cout << "\n\n You entered:  " << inNum << "." << endl;
-		cout << "\n This number is not a choice number." << endl;
-		errorMsgOut = "err_range_Number";
 	}
 	else if ((inNum >0)&& (inNum<6))
 	{

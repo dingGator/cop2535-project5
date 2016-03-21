@@ -16,7 +16,7 @@ class ValidateInput
 private:
 	// variables 
 	int valInNum;
-
+	string wrong_Choice;
 	int sentinel_99;
 public:
 	string errorMsgOut;

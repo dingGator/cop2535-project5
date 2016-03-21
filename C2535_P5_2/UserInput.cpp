@@ -24,7 +24,7 @@ int UserInput::userEnterChoice(string statusMsg)
 	if (statusMsg == begin_Input)
 	{
 
-		int choiceNum;
+	
 		cout << "\n        Please Enter a Choice                 " << endl;
 		cout << "\n   1.  Insert item to begining of List        " << endl;
 		cout << "\n   2.  Insert item to end of List             " << endl;
@@ -35,10 +35,11 @@ int UserInput::userEnterChoice(string statusMsg)
 
 		cout << "\n      Please Enter Your Choice:   ";
 
-		
+
 		cin >> choiceNum;
 	}
-	while ((!cin)|| (errorCnt < 7)|| (choiceNum != -99))
+	
+	while ((!cin)&& (errorCnt < 7)&& (choiceNum != -99))
 	{
 		cout << "\n\n  You  entered " << choiceNum;
 		cout << " This is not a choice number.  " << endl;
@@ -55,7 +56,7 @@ int UserInput::userEnterChoice(string statusMsg)
 		choiceNum = errorCnt;
 	}
 	
-		return choiceNum;
+	return choiceNum;
 	
 }
 void UserInput::processChoice()
@@ -84,20 +85,11 @@ void UserInput::processChoice()
 
 		}
 }
-string UserInput::userEnterItem(string)
+string UserInput::userEnterItem()
 {
 	cout << "\n   Please enter an item name:  " << endl;
+	
 	getline(cin,itemName);
-	while (!cin)
-	{
-		cout << "\n\n  You did not enter an item name.  " << endl;
-		cout << "\n    Please enter an item name  " << endl;
-		cout << "                 Or enter -99 to end :  " << endl;
-		cin.clear();
-		cin.ignore();
-		getline(cin,itemName);
-
-	}
 	return itemName;
 	
 };
