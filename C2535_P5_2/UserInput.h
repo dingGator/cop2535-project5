@@ -22,6 +22,7 @@ private:
 	string begin_Input;
 	int arrEleDisplay;
 	int errorCnt;
+	string continue_Entry;
 
 
 public:
@@ -30,7 +31,7 @@ public:
 
 	int userEnterChoice(string);
 	string userEnterItem();
-	void processChoice();
+	void processChoice(int, string);
 	~UserInput(){};
 };
 #endif

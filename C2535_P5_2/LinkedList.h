@@ -6,42 +6,45 @@
 #include <iostream>
 #include <string>
 
-#include "LinkNode.h"
+//#include "LinkNode.h"
 using namespace std;
 class ListNode
 {
 public:
-	ListNode(double v, ListNode *p)
+	
+	ListNode();
+	ListNode(string v, ListNode *p)
 	{
 		value = v; next = p;
 	}
-private:
-	int pos;
-	double value;
+	ListNode *head;
+
+	string value;
 	ListNode *next;
 	friend class LinkedList;      // LinkedList has friend status	
 };
 
-
-
 class LinkedList
 {
 public:
-	void add(double x);
-	bool isMember(double x);
+	void add(string x);
+	bool isMember(string x);
 	LinkedList() { head = NULL; }
 	void print();
 	void rPrint(){ rPrint(head); }
 	~LinkedList();
-	void remove(double x);
+	void remove(string x);
 	void reverse();
-	int search(double x);
+	int search(string x);
+	void insert(string x, int pos);
+	void addToEndList(string x);
+	void removeBeginList();
+	void removeEndList();
 
-	void insert(string, int, int);
-private:
+
+
+
 	ListNode *head;
 	static void rPrint(ListNode *pList);
-	int pos;
 };
-
 #endif

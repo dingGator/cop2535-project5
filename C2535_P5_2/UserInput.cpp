@@ -12,6 +12,7 @@ UserInput::UserInput()
 {
 	itemName = " ";
 	begin_Input = "begin_Input";
+	continue_Entry = "continue_Entry";
 	choiceNum =0;
 	errorCnt = 0;
 }
@@ -21,7 +22,7 @@ read in number,
 **********************************/
 int UserInput::userEnterChoice(string statusMsg)
 {
-	if (statusMsg == begin_Input)
+	if ((statusMsg == begin_Input) || (statusMsg== continue_Entry))
 	{
 
 	
@@ -59,21 +60,22 @@ int UserInput::userEnterChoice(string statusMsg)
 	return choiceNum;
 	
 }
-void UserInput::processChoice()
+void UserInput::processChoice(int choiceNum,string itemName)
 {
 		if (choiceNum == 1)
 		{
-			cout << "\n   1.  Insert item to begining of List        " << endl;
+			cout << "\n   this item:  "<< itemName << "will be inserted to begining of List " << endl;
 			
 		}
 		else if (choiceNum == 2)
 		{
-			cout << "\n   2.  Insert item to end of List             " << endl;
+			cout << "\n   this item:  " << itemName << "will be inserted to end of List " << endl;
 
 		}
 		else if (choiceNum == 3)
 		{
-			cout << "\n   3.  Remove an item from the List by name   " << endl;
+			cout << "\n   this item:  " << itemName << "will be remove from List by name " << endl;
+			
 		}
 		else if (choiceNum == 4)
 		{
@@ -87,9 +89,8 @@ void UserInput::processChoice()
 }
 string UserInput::userEnterItem()
 {
-	cout << "\n   Please enter an item name:  " << endl;
-	
-	getline(cin,itemName);
+	cout << "\n   Please enter an item name:  " ;
+	cin >> itemName;
 	return itemName;
 	
 };

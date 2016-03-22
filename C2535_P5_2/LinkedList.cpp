@@ -3,26 +3,17 @@
 #include <iostream>
 #include <string>
 #include "LinkedList.h"
-#include "LinkNode.h"
+//#include "LinkNode.h"
 
 using namespace std;
 //**********************************************************
 //              LinkedList::insert                         *
 //  Insert a given value at a specified position.          *
 //**********************************************************
-void LinkedList::insert(string statusMsg, int x, int choiceNumber)
+void LinkedList::insert(string x, int pos)
 {
 	// Cases where the new value goes at the beginning
 	// or when the list is empty are handled separately
-	if (choiceNumber == 1)
-	{
-		pos = 0;
-	}	
-	else if (choiceNumber == 2)
-	{
-		pos = NULL;
-	}
-
 	if (pos == 0 || head == NULL)
 	{
 		head = new ListNode(x, head);
@@ -31,6 +22,7 @@ void LinkedList::insert(string statusMsg, int x, int choiceNumber)
 
 	// Figure out how many nodes to skip before splicing
 	// in a new node
+
 	ListNode *p = head;                  // p is used to walk down the list
 	int numberToSkip = 1;
 	while (numberToSkip <= pos)
@@ -53,7 +45,7 @@ void LinkedList::insert(string statusMsg, int x, int choiceNumber)
 // its position in the list if found. Otherwise, it           *
 // returns -1.                                                *
 //*************************************************************
-int LinkedList::search(double x)
+int LinkedList::search(string x)
 {
 	int position = 0;
 	ListNode *p = head;   // Used to search through nodes
@@ -70,7 +62,6 @@ int LinkedList::search(double x)
 //                     LinkedList::reverse                           *
 // Rearranges the elements of the list to put them in reverse order. *
 //********************************************************************
-
 void LinkedList::reverse()
 {
 	ListNode *rev = NULL; // Holds list being reversed
@@ -107,7 +98,7 @@ LinkedList::~LinkedList()
 //              LinkedList::remove                           *
 // Removes a value passes as parameter from the linked list. *
 //************************************************************
-void LinkedList::remove(double x)
+void LinkedList::remove(string x)
 {
 	ListNode *garbage;             // Use to delete nodes
 	if (head == NULL) return;
@@ -126,7 +117,7 @@ void LinkedList::remove(double x)
 	{
 		p = p->next;
 	}
-
+	
 	// p->next == NULL or p->next->value is x
 	if (p->next == NULL) return;    // Did not find it
 	else
@@ -170,7 +161,7 @@ void LinkedList::print()
 //     LinkedList::add             *
 // Adds a given value to the list. *
 //**********************************
-void LinkedList::add(double x)
+void LinkedList::add(string x)
 {
 	head = new ListNode(x, head);
 }
@@ -179,7 +170,7 @@ void LinkedList::add(double x)
 //            LinkedList::isMember                          *
 // Checks to see if a given value is a member of the list.  *
 //***********************************************************
-bool LinkedList::isMember(double x)
+bool LinkedList::isMember(string x)
 {
 	ListNode *p = head;              // Use p to walk through list
 	while (p != NULL)
@@ -191,3 +182,56 @@ bool LinkedList::isMember(double x)
 	// List is exhausted without finding x
 	return false;
 }
+/*****************************************************
+LinkedList::addToEndList
+Add a value to the end of list
+********************************************
+void LinkedList::addToEndList(string value)
+{
+	if (head == NULL)
+		head = new ListNode(value);
+	else
+	{
+		ListNode *nodePtr = head;
+		while (nodePtr->next != NULL)
+		{
+			nodePtr = nodePtr->next;
+		}
+			nodePtr->next = new ListNode(value);
+	}
+}*/
+//************************************************************
+//              LinkedList::remove                           *
+// Removes a value passes as parameter from the linked list. *
+//************************************************************
+void LinkedList::removeBeginList()
+{
+	ListNode *garbage;             // Use to delete nodes
+	if (head == NULL) return;
+
+		garbage = head;
+		head = head->next;
+		return;
+	
+
+}/*
+void LinkedList::removeEndList()
+{	
+	ListNode *nodePtr, *previousNodePtr;
+	if (!head) return;
+
+	nodePtr = head;
+	while (nodePtr !=NULL)
+	{
+		previousNodePtr = nodePtr;
+		nodePtr = nodePtr->next;
+	}
+	if (nodePtr)
+	{
+		previousNodePtr->next = nodePtr->next;
+		delete nodePtr;
+	}
+
+}
+*/
+

@@ -21,7 +21,8 @@ public:
 
 
 	DisplayRep(){};  // constructor
-	void displayHeader();
+	void displayProgHeader();
+	void displayRepHeader();
 	/*************************************
 	display average number of movies watched
 	************************************/

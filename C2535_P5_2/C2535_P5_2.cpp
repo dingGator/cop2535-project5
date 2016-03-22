@@ -6,8 +6,9 @@
 #include "DisplayRep.h"
 #include "UserInput.h"
 #include "ValidateInput.h"
+#include "ProcessChoice.h"
 //#include "LinkNode.h"
-//#include "LinkedList.h"
+#include "LinkedList.h"
 
 using namespace std;
 /**********************************************
@@ -24,59 +25,87 @@ using namespace std;
 int main()
 
 {
-	// Explain program to user
-	cout << "\n\n   This program allows you to construct a list  " << endl;
-	cout << "\n       You can:   " << endl;
-	cout << "\n          1.    add inventory item at the end of the list. " << endl;
-	cout << "\n          2.    add inventory item at the beginning of the list." << endl;
-	cout << "\n          3.    remove inventory item from the end of the list." << endl;
-	cout << "\n          4.    remove inventory item from the beginning of the list." << endl;
-	cout << "\n          5.    remove inventory item by name.  " << endl;
-
-	cout << "\n\n       Then program will display the list of inventory items" << endl;
-
 
 	UserInput userEnter;
 	ValidateInput valInput;
-	//LinkedList list1;
-
+	LinkedList list1;
+	ProcessChoice proChoice;
 	DisplayRep  displayList;
 	string begin_Input = "begin_Input";
 	string good_Num = "good_Num";
+
 	string statusMsg;
 	int choiceNum;
 	string itemName;
-	string goodItem;
+	string good_Item = "good_Item";
 	statusMsg = begin_Input;
+	string continue_Entry = "continue_entry";
 
+	// Explain program to user
+	displayList.displayProgHeader();
 
-	
-				/********************************************
-				//			Allow the user to enter the number
-				//of movies each student saw into the array.
-				*******************************************/
-	cout << "\n\n    before userEnterInput" << endl;
-				choiceNum=userEnter.userEnterChoice(statusMsg);
-				/********************************************
-				//	 Validate all input.
-				*******************************************/
-	cout << "\n\n    before valInput  " << choiceNum<<endl;
-			statusMsg = valInput.valChoice(choiceNum);
-				if (statusMsg == good_Num)
-				{
-	cout << "\n\n    after valInput  " << endl;
-	itemName = userEnter.userEnterItem();
-	cout << "\n\n    after  enteritem  " << itemName<< endl;
+	while ((statusMsg == begin_Input) || (statusMsg == continue_Entry))
+	{
 
-	goodItem = valInput.valItem(itemName);
-					/********************************************
-					process user choice
-					//	***************************************/
-	cout << "\n\n    after valItem  " << goodItem << endl;
+		/********************************************
+		//			Allow the user to enter the number
+		//of movies each student saw into the array.
+		*******************************************/
+		choiceNum = userEnter.userEnterChoice(statusMsg);
+		
+		/********************************************
+		//	 Validate all input.
+		*******************************************/
+		statusMsg = valInput.valChoice(choiceNum);
+		if (statusMsg == good_Num)
+		{
+			if ((choiceNum == 1) || (choiceNum == 2) || (choiceNum == 3))
+			{
+				cout << "\n\n    after valInput  " << endl;
+				itemName = userEnter.userEnterItem();
+				cout << "\n\n    after  enteritem  " << itemName << endl;
 
+				statusMsg = valInput.valItem(itemName);
 			}
-					//			ldArray.loadInArray(n, movieNum, statusMsg);
-		/*			n++;
+
+		}
+
+
+		cout << "\n\n    after valItem  " << good_Item << endl;
+		if ((statusMsg == good_Item) && (choiceNum == 1))
+		{
+			cout << "\n\n    before insert  " << good_Item << endl;
+			list1.insert(itemName, 0);
+			cout << "\n\n    after insert  " << itemName << endl;
+
+
+		}
+		else if ((statusMsg == good_Item) && (choiceNum == 2))
+		{
+			cout << "\n\n  addToEndList   " << endl;
+			//	list1.addToEndList(itemName);
+		}
+		else if ((statusMsg == good_Item) && (choiceNum == 3))//		
+
+		{
+			list1.remove(itemName);
+
+		}
+		else if ((statusMsg == good_Item) && (choiceNum == 4))
+		{
+
+			list1.removeBeginList();
+		}
+		else if ((statusMsg == good_Item) && (choiceNum == 5))
+		{
+			cout << "\n\n     removeEndList" << endl;
+			//		list1.removeEndList();
+		}
+		statusMsg = continue_Entry;
+	}
+		cout << "\nCurrent list membership is: ";
+		list1.rPrint();
+	/*			n++;
 				}
 			}
 		}
@@ -94,8 +123,30 @@ int main()
 	display the average with one decimal place
 	display the mode(the value that occurs most often).
 	***********************************************/
-	
-	displayList.displayHeader();
+	/*
+	int main()
+{
+	// Explain program to user
+	cout << "This program allows you to construct a list by specifying"
+		" list members\n and their positions on the list.";
+
+	// Create empty list
+	LinkedList list1;
+
+	// Demonstrate insert by position        
+	for (int k = 1; k <= 5; k++)
+	{
+		cout << "\nEnter a number followed by a position: ";
+		int x, pos;
+		cin >> x >> pos;
+		list1.insert(x, pos);
+		cout << "\nCurrent list membership is: ";
+		list1.rPrint();
+	}
+
+	return 0;
+}*/
+	displayList.displayRepHeader();
 	//displayList.displayItemList(sizeArray,itemArray[]);
 	//	disRep.displaySurMod(modNum);
 	

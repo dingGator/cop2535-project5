@@ -82,6 +82,7 @@
     <ClCompile Include="DisplayRep.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="LinkNode.cpp" />
+    <ClCompile Include="ProcessChoice.cpp" />
     <ClCompile Include="UserInput.cpp" />
     <ClCompile Include="ValidateInput.cpp" />
   </ItemGroup>
@@ -89,6 +90,7 @@
     <ClInclude Include="DisplayRep.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="LinkNode.h" />
+    <ClInclude Include="ProcessChoice.h" />
     <ClInclude Include="UserInput.h" />
     <ClInclude Include="ValidateInput.h" />
   </ItemGroup>
