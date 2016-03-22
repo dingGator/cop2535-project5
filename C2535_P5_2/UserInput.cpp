@@ -22,6 +22,8 @@ read in number,
 **********************************/
 int UserInput::userEnterChoice(string statusMsg)
 {
+	cout << "\n        status Msg       " << statusMsg<<endl;
+
 	if ((statusMsg == begin_Input) || (statusMsg== continue_Entry))
 	{
 

@@ -39,12 +39,12 @@ int main()
 	string itemName;
 	string good_Item = "good_Item";
 	statusMsg = begin_Input;
-	string continue_Entry = "continue_entry";
+	string continue_Entry = "continue_Entry";
 
 	// Explain program to user
 	displayList.displayProgHeader();
 
-	while ((statusMsg == begin_Input) || (statusMsg == continue_Entry))
+	while ((statusMsg == begin_Input) || (statusMsg == continue_Entry)|| (choiceNum !=-99))
 	{
 
 		/********************************************
@@ -102,6 +102,9 @@ int main()
 			//		list1.removeEndList();
 		}
 		statusMsg = continue_Entry;
+		cout << "\nCurrent list membership is here : ";
+		list1.rPrint();
+
 	}
 		cout << "\nCurrent list membership is: ";
 		list1.rPrint();

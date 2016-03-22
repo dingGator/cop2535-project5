@@ -50,7 +50,7 @@ string ValidateInput::valItem(string itemName)
 	{
 		cout << "\n\n  You wanted to stop entering numbers.  Good bye    " << endl;
 
-		exit(0);
+		//exit(0);
 	}
 	else 
 	{
