@@ -22,7 +22,6 @@ public:
 
 	ProcessChoice();  // constructor
 
-	void procChoice(int, string);
 	~ProcessChoice(){};
 };
 #endif

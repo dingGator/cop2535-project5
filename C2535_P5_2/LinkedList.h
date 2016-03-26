@@ -13,7 +13,7 @@ class ListNode
 public:
 	
 	ListNode();
-	ListNode(string v, ListNode *p)
+	ListNode(string v, ListNode *p = NULL)
 	{
 		value = v; next = p;
 	}

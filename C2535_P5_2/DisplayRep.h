@@ -23,11 +23,7 @@ public:
 	DisplayRep(){};  // constructor
 	void displayProgHeader();
 	void displayRepHeader();
-	/*************************************
-	display average number of movies watched
-	************************************/
-	void displayItemList(int,string[]);
-
+	
 	/****************************************
 	display mode of the survey
 	**************************************/

@@ -119,7 +119,8 @@ void LinkedList::remove(string x)
 	}
 	
 	// p->next == NULL or p->next->value is x
-	if (p->next == NULL) return;    // Did not find it
+	if (p->next == NULL){ return; }
+	// Did not find it
 	else
 	{
 		// Delete the x
@@ -138,7 +139,7 @@ void LinkedList::rPrint(ListNode *pList)
 	if (pList == NULL) return;
 	else
 	{
-		cout << pList->value << "  ";
+		cout <<"           " <<pList->value << "   ";
 		rPrint(pList->next);
 	}
 }
@@ -185,11 +186,13 @@ bool LinkedList::isMember(string x)
 /*****************************************************
 LinkedList::addToEndList
 Add a value to the end of list
-********************************************
-void LinkedList::addToEndList(string value)
+********************************************/
+void LinkedList::addToEndList(string x)
 {
 	if (head == NULL)
-		head = new ListNode(value);
+	{
+		head = new ListNode(x);
+	}
 	else
 	{
 		ListNode *nodePtr = head;
@@ -197,9 +200,9 @@ void LinkedList::addToEndList(string value)
 		{
 			nodePtr = nodePtr->next;
 		}
-			nodePtr->next = new ListNode(value);
+			nodePtr->next = new ListNode(x);
 	}
-}*/
+}
 //************************************************************
 //              LinkedList::remove                           *
 // Removes a value passes as parameter from the linked list. *
@@ -209,29 +212,30 @@ void LinkedList::removeBeginList()
 	ListNode *garbage;             // Use to delete nodes
 	if (head == NULL) return;
 
+	// Is x in the head?
 		garbage = head;
 		head = head->next;
 		return;
 	
 
-}/*
-void LinkedList::removeEndList()
-{	
-	ListNode *nodePtr, *previousNodePtr;
-	if (!head) return;
-
-	nodePtr = head;
-	while (nodePtr !=NULL)
-	{
-		previousNodePtr = nodePtr;
-		nodePtr = nodePtr->next;
-	}
-	if (nodePtr)
-	{
-		previousNodePtr->next = nodePtr->next;
-		delete nodePtr;
-	}
-
 }
-*/
+void LinkedList::removeEndList()
+{
+	ListNode *garbage;             // Use to delete nodes
+	if (head == NULL) return;
+
+	ListNode *lastitemPtr=head;
+	ListNode *prevPtr=head;
+	// Is x in the head?
+	// x not in the head, find it
+	while (lastitemPtr->next != NULL)
+	{
+		prevPtr = lastitemPtr;
+		lastitemPtr = lastitemPtr->next;
+	}
+	prevPtr->next = NULL;
+	delete lastitemPtr;
+	lastitemPtr = NULL;
+}
+
 

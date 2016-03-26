@@ -31,7 +31,6 @@ public:
 
 	int userEnterChoice(string);
 	string userEnterItem();
-	void processChoice(int, string);
 	~UserInput(){};
 };
 #endif

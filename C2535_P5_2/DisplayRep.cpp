@@ -10,9 +10,8 @@ using namespace std;
 
 void DisplayRep::displayProgHeader()
 {
-	
+	cout << "\n\n***************************************************************           ";
 	cout << "\n\n   This program allows you to construct a list ";
-	cout << "\n\n    by:  " << endl;
 	cout << "\n       You can:   " << endl;
 	cout << "\n          1.    add inventory item at the begining of the list. " << endl;
 	cout << "\n          2.    add inventory item at the end of the list." << endl;
@@ -20,7 +19,9 @@ void DisplayRep::displayProgHeader()
 	cout << "\n          4.    remove inventory item from the begining of the list." << endl;
 	cout << "\n          5.    remove inventory item from the end of the list." << endl;
 	cout << "\n\n       Then program will display the list of inventory items" << endl;
-	
+	cout << "\n\n***************************************************************           ";
+	cout << endl;
+	cout << endl;
 }
 /*******************************
 display header
@@ -35,23 +36,6 @@ void DisplayRep::displayRepHeader()
 	cout << "\n     ****************************************************" << endl;
 
 }
-/*************************************
-display average number of movies watched
-************************************/
-
-void DisplayRep::displayItemList(int sizeofArray,string arrayItem[])
-{
-	//display
-	
-	for (int i = 0; i < sizeofArray; i++)
-	{
-		cout << "\n        item # " << (i + 1) << "  is:  " << endl;
-	}
-	
-}
-/****************************************
-display mode of the survey
-**************************************/
 
 
 

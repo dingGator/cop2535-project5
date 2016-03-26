@@ -12,6 +12,7 @@ ValidateInput::ValidateInput()
 	sentinel_99 = -99;
 	errorMsgOut = " ";
 	wrong_Choice = "wrong_Number";
+	
 }
 /***************************
 ValidateNum::errorMsg
@@ -25,20 +26,23 @@ and error msg back to the program
 
 string ValidateInput::valChoice(int inNum)
 {
-
-	cout << "\n\n  inNum  " << inNum << endl;
-
-	if ((inNum == sentinel_99)|| (inNum ==6))  //sentinel
+	if (inNum == sentinel_99)  //sentinel
 	{
-		cout << "\n\n  You wanted to stop entering numbers.  Good bye    " << endl;
-
-		exit(0);
+		cout << "\n\n  You wanted to stop entering to list.  Good bye    " << endl;
+		errorMsgOut = "exit_Now";
+//		exit(0);
 	}
 	else if ((inNum >0)&& (inNum<6))
 	{
 		errorMsgOut = "good_Num";
 	}
-
+	else
+	{
+		cout << "\n\n  You  entered " << inNum;
+		cout << "\n This is not a choice number.  " << endl;
+		cout << "    Please enter a choice number Or enter -99 to end :  " << endl;
+		errorMsgOut = "wrong_Number";
+	}
 
 	return errorMsgOut;
 
@@ -46,17 +50,16 @@ string ValidateInput::valChoice(int inNum)
 }
 string ValidateInput::valItem(string itemName)
 {
-	if (itemName == "-99")  //sentinel
+	if (itemName == "-99")
 	{
-		cout << "\n\n  You wanted to stop entering numbers.  Good bye    " << endl;
+		cout << "\n\n  You wanted to stop entering to list.  Good bye    " << endl;
+		errorMsgOut = "exit_Now";
 
-		//exit(0);
 	}
-	else 
+	else
 	{
 		cout << "\n\n You entered:  " << itemName << "." << endl;
 		errorMsgOut = "good_Item";
-
 	}
 	return errorMsgOut;
 
